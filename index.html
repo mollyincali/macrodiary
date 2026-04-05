@@ -228,23 +228,10 @@
 
   <div class="goals-row">
     <label>goal:</label>
-    <input type="number" id="goal-cal" value="1750" style="width:68px" onchange="saveGoals()">
+    <input type="number" inputmode="decimal" id="goal-cal" value="1750" style="width:68px" onchange="saveGoals()">
     <span>kcal</span>
-    <input type="number" id="goal-pro" value="155" style="width:60px" onchange="saveGoals()">
+    <input type="number" inputmode="decimal" id="goal-pro" value="155" style="width:60px" onchange="saveGoals()">
     <span>g protein</span>
-  </div>
-
-  <div class="section-title">AI macro lookup</div>
-  <div class="api-setup" id="api-setup">
-    <p>Paste your Anthropic API key to enable AI macro lookup from meal descriptions. Your key is stored only in your browser's localStorage and never sent anywhere except directly to Anthropic.</p>
-    <p><a href="https://console.anthropic.com/settings/keys" target="_blank">Get your API key &rarr;</a></p>
-    <div class="api-key-row">
-      <input type="password" id="api-key-input" placeholder="sk-ant-..." />
-      <button onclick="saveApiKey()">Save key</button>
-    </div>
-    <div id="api-badge" style="display:none" class="api-badge">
-      <div class="api-badge-dot"></div> API key saved &mdash; <span style="cursor:pointer;text-decoration:underline;color:var(--text-secondary)" onclick="clearApiKey()">remove</span>
-    </div>
   </div>
 
   <div class="section-title">Add food</div>
@@ -283,10 +270,10 @@
           <label>food name</label>
           <input type="text" id="man-name" placeholder="e.g. Greek yogurt">
         </div>
-        <div><label>calories (kcal)</label><input type="number" class="field" id="man-cal" placeholder="0" min="0"></div>
-        <div><label>protein (g)</label><input type="number" class="field" id="man-pro" placeholder="0" min="0"></div>
-        <div><label>carbs (g)</label><input type="number" class="field" id="man-carb" placeholder="0" min="0"></div>
-        <div><label>fat (g)</label><input type="number" class="field" id="man-fat" placeholder="0" min="0"></div>
+        <div><label>calories (kcal)</label><input type="number" inputmode="decimal" class="field" id="man-cal" placeholder="0" min="0"></div>
+        <div><label>protein (g)</label><input type="number" inputmode="decimal" class="field" id="man-pro" placeholder="0" min="0"></div>
+        <div><label>carbs (g)</label><input type="number" inputmode="decimal" class="field" id="man-carb" placeholder="0" min="0"></div>
+        <div><label>fat (g)</label><input type="number" inputmode="decimal" class="field" id="man-fat" placeholder="0" min="0"></div>
       </div>
       <button class="btn-primary" onclick="addManualEntry()">add to diary</button>
     </div>
@@ -294,6 +281,19 @@
 
   <div class="section-title" id="entries-label">Today's food</div>
   <div class="entries-list" id="entries-list"></div>
+
+  <div class="section-title">AI macro lookup</div>
+  <div class="api-setup" id="api-setup">
+    <p>Paste your Anthropic API key to enable AI macro lookup from meal descriptions. Your key is stored only in your browser's localStorage and never sent anywhere except directly to Anthropic.</p>
+    <p><a href="https://console.anthropic.com/settings/keys" target="_blank">Get your API key &rarr;</a></p>
+    <div class="api-key-row">
+      <input type="password" id="api-key-input" placeholder="sk-ant-..." />
+      <button onclick="saveApiKey()">Save key</button>
+    </div>
+    <div id="api-badge" style="display:none" class="api-badge">
+      <div class="api-badge-dot"></div> API key saved &mdash; <span style="cursor:pointer;text-decoration:underline;color:var(--text-secondary)" onclick="clearApiKey()">remove</span>
+    </div>
+  </div>
 
 </div>
 
